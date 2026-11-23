@@ -1,0 +1,14 @@
+#include "ft_parser.h"
+
+t_cmdt	*ft_parser(t_dll *token_list)
+{
+	t_cmdt	*cmdt;
+
+	if (valid_syntax(token_list))
+	{
+		cmdt = ft_get_cmdt(token_list);
+		return (cmdt);
+	}
+	printf("Syntax error :/\n");
+	return (NULL);
+}

@@ -1,0 +1,22 @@
+NAME		=	ft_lexer.a
+CC			=	gcc
+RM			=	rm -f
+CFLAGS		=	-Wall -Wextra -Werror -g
+OBJS		=	$(SRC:.c=.o)
+SRC			=	ft_lexer.c ft_lexer_utils.c token_management.c ft_lexer_free_tools.c
+
+all			: 	$(NAME)
+
+$(NAME)		:	$(OBJS)
+				ar rcs $(NAME) $(OBJS)
+
+clean		:
+				$(RM) $(OBJS)
+
+fclean		:	clean
+				$(RM) $(NAME)
+
+re			:	fclean all
+
+.PHONY		:	clean fclean re all
+

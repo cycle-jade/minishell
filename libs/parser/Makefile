@@ -1,0 +1,26 @@
+NAME		=	ft_parser.a
+CC			=	gcc
+RM			=	rm -f
+CFLAGS		=	-Wall -Wextra -Werror -g
+OBJS		=	$(SRC:.c=.o)
+SRC			=	parser_to_str.c ft_parser.c ft_syntax_check.c \
+				ft_red_ver.c ft_cmdt_type.c ft_get_cmdt.c ft_get_cmd.c \
+				ft_parser_utils.c ft_redirection.c ft_clean_cmdt.c \
+				ft_sort_redirections.c ft_get_pipes_cmd.c \
+				ft_cmd_btwn_redir.c ft_red_ver_utils.c \
+				parser_to_str_utils.c
+
+all			:	$(NAME)
+
+$(NAME)		:	$(OBJS)
+				ar rcs $(NAME) $(OBJS)
+
+clean		:
+				$(RM) $(OBJS)
+
+fclean		:	clean
+				$(RM) $(NAME)
+
+re			:	fclean all
+
+.PHONY		:	clean fclean re all
