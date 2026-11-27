@@ -50,7 +50,7 @@ world
 ## Technical choices
 - tokenizer, then parser, then executor
 - handling heredocs and file descriptors
-- Memory Management and leaks clean uo
+- Memory Management and leaks clean up
 
 ## Resources
 - [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
